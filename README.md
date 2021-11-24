@@ -1,7 +1,7 @@
 # Worksome Uk Allowance library
 
-[![Tests](https://github.com/worksome/uk-allowance/actions/workflows/main.yml/badge.svg)](https://github.com/worksome/uk-allowance/actions/workflows/main.yml)
-[![Code Analysis](https://github.com/worksome/uk-allowance/actions/workflows/code-analysis.yml/badge.svg)](https://github.com/worksome/uk-allowance/actions/workflows/code-analysis.yml)
+[![Tests](https://github.com/worksome/uk-tax-allowance/actions/workflows/main.yml/badge.svg)](https://github.com/worksome/uk-tax-allowance/actions/workflows/main.yml)
+[![Code Analysis](https://github.com/worksome/uk-tax-allowance/actions/workflows/code-analysis.yml/badge.svg)](https://github.com/worksome/uk-tax-allowance/actions/workflows/code-analysis.yml)
 
 This package is for determining a UK employee tax allowance for a specific date range. 
 
@@ -10,16 +10,9 @@ You may get weekly or monthly number of allowance, as well as weekly or monthly 
 ## Installation
 
 ```shell
-composer i worksome/uk-allowance
+composer i worksome/uk-tax-allowance
 ```
 
 ## Usage
 
-```php
-
-use Worksome\UkTaxAllowance\UkTaxAllowanceCalculator;
-
-
-
-```
-use 
+WIP

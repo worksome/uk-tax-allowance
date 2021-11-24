@@ -2,11 +2,10 @@
 
 use Carbon\Carbon;
 use Worksome\UkTaxAllowance\UkTaxAllowanceCalculator;
-use Worksome\UkTaxAllowance\Calendars\YasumiUkCalendar;
 
 uses()
     ->beforeEach(function () {
-        $this->taxAllowanceCalculator = new UkTaxAllowanceCalculator(new YasumiUkCalendar());
+        $this->taxAllowanceCalculator = $this->app->make(UkTaxAllowanceCalculator::class);
     });
 
 it('returns valid week end dates', function ($start, $end, $endDates) {
