@@ -1,0 +1,36 @@
+{
+  "name": "worksome/uk-tax-allowance",
+  "description": "Helps determining the Uk weekly or monthly tax allowance for a specific date range",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "azuyalabs/yasumi": "2.4.0"
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.21",
+    "worksome/coding-style": "^0.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Worksome\\UkTaxAllowance\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Worksome\\UkTaxAllowance\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "scripts": {
+    "phpcs": "vendor/bin/phpcs",
+    "phpcbf": "vendor/bin/phpcbf",
+    "rector-ci": "vendor/bin/rector process --dry-run --ansi",
+    "rector": "vendor/bin/rector process --ansi",
+    "pest:test": "pest --colors=always --stop-on-failure"
+  }
+}
