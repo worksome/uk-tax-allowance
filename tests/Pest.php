@@ -1,3 +1,5 @@
 <?php
 
-uses(\Worksome\UkTaxAllowance\Tests\TestCase::class)->in('./');
+use Worksome\UkTaxAllowance\Tests\TestCase;
+
+uses(TestCase::class)->in('./');
