@@ -3,6 +3,7 @@
   "description": "Helps determining the Uk weekly or monthly tax allowance for a specific date range",
   "type": "library",
   "license": "MIT",
+  "version": "1.0.1",
   "require": {
     "php": "^8.0",
     "azuyalabs/yasumi": "2.4.0"
