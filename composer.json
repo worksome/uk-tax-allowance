@@ -1,9 +1,8 @@
 {
   "name": "worksome/uk-tax-allowance",
-  "description": "Helps determining the Uk weekly or monthly tax allowance for a specific date range",
+  "description": "A package helping in determining the Uk weekly or monthly tax allowance for a specific date range",
   "type": "library",
   "license": "MIT",
-  "version": "1.0.1",
   "require": {
     "php": "^8.0",
     "azuyalabs/yasumi": "2.4.0"
@@ -15,17 +14,16 @@
   },
   "autoload": {
     "psr-4": {
-      "Worksome\\UkTaxAllowance\\": "src/"
+      "Worksome\\UkTaxAllowance\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Worksome\\UkTaxAllowance\\Tests\\": "tests/"
+      "Worksome\\UkTaxAllowance\\Tests\\": "tests"
     }
   },
   "config": {
     "optimize-autoloader": true,
-    "preferred-install": "dist",
     "sort-packages": true
   },
   "scripts": {
