@@ -45,6 +45,6 @@ $monthlyAllowanceCount = $ukTaxAllowanceCalculator->monthly($dateStart, $dateEnd
 
 ### Calendar
 
-You may use our YasumiUkCalendar which relies on the yasumi/yasumi packages. For Laravel users, `UkTaxAllowanceServiceProvider` will register it by default.
+You may use our YasumiUkCalendar which relies on the azuyalabs/yasumi package. For Laravel users, `UkTaxAllowanceServiceProvider` will register it by default.
 
 Or create your own and have it implement `Worksome\UkTaxAllowance\Contracts\UkCalendar`
