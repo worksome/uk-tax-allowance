@@ -68,6 +68,7 @@ it('returns valid weekly allowance intervals', function ($start, $end, $allowanc
 
     expect($this->taxAllowanceCalculator->weekly($start, $end))->toEqual($allowance);
 })->with([
+            // Start date   | End date   | Expected allowance count
              [ '2021-04-01', '2021-04-03', 1 ], // less than a week
              [ '2021-04-03', '2021-04-06', 2 ], // less than a week over two weeks
              [ '2021-04-05', '2021-04-05', 1 ], // one monday
@@ -92,6 +93,7 @@ it('returns valid month end dates', function ($start, $end, $endDates) {
 
     expect($monthEndDates)->toEqual($endDates);
 })->with([
+             // Start     |   End       | Expected list of end dates
              [ '2021-04-01', '2021-04-03', [ '2021-04-01' ] ],
              [ '2021-04-01', '2021-04-30', [ '2021-04-30' ] ],
              [ '2021-04-01', '2021-05-10', [ '2021-04-30', '2021-05-10' ] ],
@@ -116,6 +118,7 @@ it('returns valid monthly allowance intervals', function ($start, $end, $allowan
 
     expect($this->taxAllowanceCalculator->monthly($start, $end))->toEqual($allowance);
 })->with([
+             // Start date   | End date   | Expected allowance count
              [ '2021-04-01', '2021-04-03', 1 ],
              // less than a month
              [ '2021-04-01', '2021-04-30', 1 ],
