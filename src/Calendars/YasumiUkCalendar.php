@@ -16,21 +16,21 @@ class YasumiUkCalendar implements UkCalendar
     public function isWeekendDay(Carbon $date): bool
     {
         return $this->getCalendar($date)
-                    ->isWeekendDay($date);
+            ->isWeekendDay($date);
     }
 
     public function isHoliday(Carbon $date): bool
     {
         return $this->getCalendar($date)
-                    ->isHoliday($date);
+            ->isHoliday($date);
     }
 
     public function isWorkingDay(Carbon $date): bool
     {
         $ukCalendar = $this->getCalendar($date);
 
-        return ! $ukCalendar->isWeekendDay($date)
-               && ! $ukCalendar->isHoliday($date);
+        return !$ukCalendar->isWeekendDay($date)
+            && !$ukCalendar->isHoliday($date);
     }
 
     public function closestFuturWorkingDay(Carbon $date): Carbon
@@ -47,7 +47,7 @@ class YasumiUkCalendar implements UkCalendar
     {
         $workingDay = $date->copy();
 
-        while (! $this->isWorkingDay($workingDay)) {
+        while (!$this->isWorkingDay($workingDay)) {
             $workingDay->addDays($direction);
         }
 

@@ -24,14 +24,14 @@ class UkTaxAllowanceCalculator
     {
         $insideDates = collect(
             CarbonInterval::week()
-                          ->toPeriod($start, $end)
+                ->toPeriod($start, $end)
         )
             ->map(fn(Carbon $date) => $date->endOfWeek())
             ->reject(fn(Carbon $date) => $date->isAfter($end));
 
         $sundaysHovered = CarbonInterval::day()
-                                        ->toPeriod($start, $end, CarbonPeriod::EXCLUDE_END_DATE)
-                                        ->filter(fn(Carbon $carbon) => $carbon->isSunday());
+            ->toPeriod($start, $end, CarbonPeriod::EXCLUDE_END_DATE)
+            ->filter(fn(Carbon $carbon) => $carbon->isSunday());
 
         if ($sundaysHovered->count() >= $insideDates->count()) {
             $insideDates->push($end->copy());
@@ -51,15 +51,15 @@ class UkTaxAllowanceCalculator
         $dateEnd = $this->calendar->closestPastWorkingDay($end);
 
         if ($dateStart->isSameMonth($dateEnd)) {
-            return collect([ $dateEnd->copy() ]);
+            return collect([$dateEnd->copy()]);
         }
 
         $months = collect(
             CarbonInterval::day()
-                          ->toPeriod($dateStart, $dateEnd)
-                          ->filter(
-                              fn(Carbon $day) => $day->isSameDay($this->lastWorkingDayOfTheMonth($day))
-                          )
+                ->toPeriod($dateStart, $dateEnd)
+                ->filter(
+                    fn(Carbon $day) => $day->isSameDay($this->lastWorkingDayOfTheMonth($day))
+                )
         );
 
         if ($dateEnd->isBefore($this->lastWorkingDayOfTheMonth($dateEnd))) {
@@ -78,7 +78,7 @@ class UkTaxAllowanceCalculator
     {
         // This counts the last months working days included in the period
         return $this->monthlyEndDatesBetween($start, $end)
-                    ->count();
+            ->count();
     }
 
     public function lastWorkingDayOfTheMonth(Carbon $day): Carbon
@@ -91,7 +91,7 @@ class UkTaxAllowanceCalculator
 
     protected function isWorkingDay(Carbon $carbon): bool
     {
-        return ! $this->calendar->isWeekendDay($carbon)
-               && ! $this->calendar->isHoliday($carbon);
+        return !$this->calendar->isWeekendDay($carbon)
+            && !$this->calendar->isHoliday($carbon);
     }
 }

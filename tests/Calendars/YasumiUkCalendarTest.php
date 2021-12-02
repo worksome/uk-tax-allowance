@@ -15,9 +15,9 @@ it('returns correct closest past working day', function ($day, $expectedClosestP
 
     expect($closestPastWorkingDay->toDateString())->toEqual($expectedClosestPastWorkingDay);
 })->with([
-             [ '2021-04-02', '2021-04-01' ],
-             [ '2021-05-29', '2021-05-28' ],
-         ]);
+    ['2021-04-02', '2021-04-01'],
+    ['2021-05-29', '2021-05-28'],
+]);
 
 it('returns correct closest future working day', function ($day, $expectedClosestFutureWorkingDay) {
     $day = Carbon::createFromFormat('Y-m-d', $day);
@@ -25,6 +25,6 @@ it('returns correct closest future working day', function ($day, $expectedCloses
 
     expect($closestFutureWorkingDay->toDateString())->toEqual($expectedClosestFutureWorkingDay);
 })->with([
-             [ '2021-04-02', '2021-04-06' ],
-             [ '2021-05-29', '2021-06-01' ],
-         ]);
+    ['2021-04-02', '2021-04-06'],
+    ['2021-05-29', '2021-06-01'],
+]);

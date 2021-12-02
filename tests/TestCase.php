@@ -7,7 +7,8 @@ use Worksome\UkTaxAllowance\UkTaxAllowanceServiceProvider;
 
 class TestCase extends OrchestraTestCase
 {
-    protected function getPackageProviders($app): array {
+    protected function getPackageProviders($app): array
+    {
         return [UkTaxAllowanceServiceProvider::class];
     }
 }

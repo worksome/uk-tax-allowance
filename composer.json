@@ -31,6 +31,6 @@
     "phpcbf": "vendor/bin/phpcbf",
     "rector-ci": "vendor/bin/rector process --dry-run --ansi",
     "rector": "vendor/bin/rector process --ansi",
-    "pest:test": "pest --colors=always --stop-on-failure"
+    "pest:test": "pest --colors=always"
   }
 }
