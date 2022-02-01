@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "azuyalabs/yasumi": "2.4.0"
+        "azuyalabs/yasumi": "^2.4"
     },
     "require-dev": {
         "pestphp/pest": "^1.21",
