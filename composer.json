@@ -4,13 +4,14 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "php": "^8.0",
-        "azuyalabs/yasumi": "^2.4"
+        "php": "^8.2",
+        "azuyalabs/yasumi": "^2.5"
     },
     "require-dev": {
-        "pestphp/pest": "^1.21",
-        "orchestra/testbench": "^6.22",
-        "worksome/coding-style": "^0.4"
+        "orchestra/testbench": "^7.18",
+        "pestphp/pest": "^1.22.3",
+        "pestphp/pest-plugin-parallel": "^1.2",
+        "worksome/coding-style": "^2.3"
     },
     "autoload": {
         "psr-4": {
@@ -24,14 +25,24 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "worksome/coding-style": true
+        }
     },
     "scripts": {
-        "phpcs": "vendor/bin/phpcs",
-        "phpcbf": "vendor/bin/phpcbf",
-        "rector-ci": "vendor/bin/rector process --dry-run --ansi",
-        "rector": "vendor/bin/rector process --ansi",
-        "pest:test": "pest --colors=always"
+        "lint": "vendor/bin/ecs --fix",
+        "test:unit": "vendor/bin/pest -p",
+        "test:coverage": "vendor/bin/pest -p --coverage",
+        "test:types": "vendor/bin/phpstan analyse",
+        "test:style": "vendor/bin/ecs",
+        "test": [
+            "@test:style",
+            "@test:types",
+            "@test:unit"
+        ]
     },
     "extra": {
         "laravel": {
