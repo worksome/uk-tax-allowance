@@ -15,7 +15,7 @@ jobs:
 
         actions:
           -   name: ECS
-              run: 'composer ecs'
+              run: 'composer test:style'
 
     steps:
       - name: Checkout code
