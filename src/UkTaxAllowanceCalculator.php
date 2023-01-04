@@ -91,7 +91,7 @@ class UkTaxAllowanceCalculator
 
     protected function isWorkingDay(Carbon $carbon): bool
     {
-        return !$this->calendar->isWeekendDay($carbon)
-            && !$this->calendar->isHoliday($carbon);
+        return ! $this->calendar->isWeekendDay($carbon)
+            && ! $this->calendar->isHoliday($carbon);
     }
 }
