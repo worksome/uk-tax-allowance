@@ -50,5 +50,7 @@
                 "Worksome\\UkTaxAllowance\\UkTaxAllowanceServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
