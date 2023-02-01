@@ -1,32 +1,37 @@
 name: Tests
 
 on:
-  push:
+    push:
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    name: Pest on PHP ${{ matrix.php }} - Testbench ${{ matrix.testbench }}
-    strategy:
-      matrix:
-        php: ['8.2']
-        testbench: [7.*, 8.*]
+    setup:
+        runs-on: ubuntu-latest
+        name: Pest on PHP ${{ matrix.php }} - Testbench ${{ matrix.testbench }}
+        strategy:
+            matrix:
+                php: [ '8.2' ]
+                testbench: [ 7.*, 8.* ]
+            include:
+                -   testbench: 7.*
+                    laravel: 9.*
+                -   testbench: 8.*
+                    laravel: 10.*
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v2
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          extensions: oauth
-          coverage: none
-          php-version: ${{ matrix.php }}
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    extensions: oauth
+                    coverage: none
+                    php-version: ${{ matrix.php }}
 
-      - name: Install Composer dependencies
-        run: |
-            composer update "orchestra/testbench:${{ matrix.testbench }}" --dev --no-interaction --no-install
-            composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+            -   name: Install Composer dependencies
+                run: |
+                    composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+                    composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
-      - name: Test php code
-        run: composer test:unit
+            -   name: Test php code
+                run: composer test:unit
