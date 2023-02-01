@@ -8,7 +8,7 @@
         "azuyalabs/yasumi": "^2.5"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.18",
+        "orchestra/testbench": "^7.18|^8.0",
         "pestphp/pest": "^1.22.3",
         "pestphp/pest-plugin-parallel": "^1.2",
         "worksome/coding-style": "^2.3"
