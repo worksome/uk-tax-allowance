@@ -7,27 +7,33 @@ use Carbon\Carbon;
 interface UkCalendar
 {
     /**
-     * Indicates if a Carbon $date is a weekend day or not
+     * Indicates if the provided date is a weekend day or not.
      */
     public function isWeekendDay(Carbon $date): bool;
 
     /**
-     * Indicates if a Carbon $date is a uk holiday or not
+     * Indicates if the provided date is a UK holiday or not.
      */
     public function isHoliday(Carbon $date): bool;
 
     /**
-     * Indicates if a Carbon $date is a working day (not a holiday nor a weekend day)
+     * Indicates if the provided date is a working day (not a holiday nor a weekend day).
      */
     public function isWorkingDay(Carbon $date): bool;
 
     /**
-     * Returns the closest working day in the future in comparaison to the passed Carbon $date
+     * Returns the closest working day in the future in comparison to the provided date.
      */
-    public function closestFuturWorkingDay(Carbon $date): Carbon;
+    public function closestFutureWorkingDay(Carbon $date): Carbon;
 
     /**
-     * Returns the closest working day in the past in comparaison to the passed Carbon $date
+     * Returns the closest working day in the past in comparison to the provided date.
      */
     public function closestPastWorkingDay(Carbon $date): Carbon;
+
+    /**
+     * @deprecated Use closestFutureWorkingDay() instead.
+     * @see closestFutureWorkingDay()
+     */
+    public function closestFuturWorkingDay(Carbon $date): Carbon;
 }

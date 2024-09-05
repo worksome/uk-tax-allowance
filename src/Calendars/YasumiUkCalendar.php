@@ -33,14 +33,22 @@ class YasumiUkCalendar implements UkCalendar
             && ! $ukCalendar->isHoliday($date);
     }
 
-    public function closestFuturWorkingDay(Carbon $date): Carbon
+    /** {@inheritdoc} */
+    public function closestFutureWorkingDay(Carbon $date): Carbon
     {
         return $this->closestWorkingDay($date, self::FUTURE);
     }
 
+    /** {@inheritdoc} */
     public function closestPastWorkingDay(Carbon $date): Carbon
     {
         return $this->closestWorkingDay($date, self::PAST);
+    }
+
+    /** {@inheritdoc} */
+    public function closestFuturWorkingDay(Carbon $date): Carbon
+    {
+        return $this->closestFutureWorkingDay($date);
     }
 
     protected function closestWorkingDay(Carbon $date, int $direction): Carbon

@@ -21,7 +21,7 @@ it('returns correct closest past working day', function ($day, $expectedClosestP
 
 it('returns correct closest future working day', function ($day, $expectedClosestFutureWorkingDay) {
     $day = Carbon::createFromFormat('Y-m-d', $day);
-    $closestFutureWorkingDay = $this->calendar->closestFuturWorkingDay($day);
+    $closestFutureWorkingDay = $this->calendar->closestFutureWorkingDay($day);
 
     expect($closestFutureWorkingDay->toDateString())->toEqual($expectedClosestFutureWorkingDay);
 })->with([
