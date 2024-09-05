@@ -8,7 +8,7 @@ use Worksome\UkTaxAllowance\Contracts\UkCalendar;
 
 class UkTaxAllowanceServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function register(): void
     {
         $this->app->bind(UkCalendar::class, function () {
             return new YasumiUkCalendar();

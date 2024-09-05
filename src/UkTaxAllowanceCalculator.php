@@ -54,6 +54,7 @@ class UkTaxAllowanceCalculator
             return collect([$dateEnd->copy()]);
         }
 
+        /** @var Collection<Carbon> $months */
         $months = collect(
             CarbonInterval::day()
                 ->toPeriod($dateStart, $dateEnd)
@@ -71,7 +72,7 @@ class UkTaxAllowanceCalculator
 
     public function weekly(Carbon $start, Carbon $end): int
     {
-        return collect($this->weeklyEndDatesBetween($start, $end))->count();
+        return $this->weeklyEndDatesBetween($start, $end)->count();
     }
 
     public function monthly(Carbon $start, Carbon $end): int
