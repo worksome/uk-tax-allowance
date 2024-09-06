@@ -3,4 +3,4 @@ parameters:
         - src
 
     # The level 8 is the highest level
-    level: 0
+    level: 4
