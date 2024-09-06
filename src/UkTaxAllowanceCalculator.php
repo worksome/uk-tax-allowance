@@ -47,7 +47,7 @@ class UkTaxAllowanceCalculator
      */
     public function monthlyEndDatesBetween(Carbon $start, Carbon $end): Collection
     {
-        $dateStart = $this->calendar->closestFuturWorkingDay($start);
+        $dateStart = $this->calendar->closestFutureWorkingDay($start);
         $dateEnd = $this->calendar->closestPastWorkingDay($end);
 
         if ($dateStart->isSameMonth($dateEnd)) {
