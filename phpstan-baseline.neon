@@ -1,0 +1,25 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^PHP files should declare strict types\.$#'
+			identifier: worksome.declareStrictTypes
+			count: 1
+			path: src/Calendars/YasumiUkCalendar.php
+
+		-
+			message: '#^PHP files should declare strict types\.$#'
+			identifier: worksome.declareStrictTypes
+			count: 1
+			path: src/Contracts/UkCalendar.php
+
+		-
+			message: '#^PHP files should declare strict types\.$#'
+			identifier: worksome.declareStrictTypes
+			count: 1
+			path: src/UkTaxAllowanceCalculator.php
+
+		-
+			message: '#^PHP files should declare strict types\.$#'
+			identifier: worksome.declareStrictTypes
+			count: 1
+			path: src/UkTaxAllowanceServiceProvider.php

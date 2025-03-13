@@ -11,6 +11,7 @@ use Yasumi\Yasumi;
 class YasumiUkCalendar implements UkCalendar
 {
     protected const FUTURE = 1;
+
     protected const PAST = -1;
 
     /** {@inheritdoc} */
