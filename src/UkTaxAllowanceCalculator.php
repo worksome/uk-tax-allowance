@@ -11,6 +11,7 @@ use Worksome\UkTaxAllowance\Contracts\UkCalendar;
 class UkTaxAllowanceCalculator
 {
     protected const FUTURE = 1;
+
     protected const PAST = -1;
 
     public function __construct(private UkCalendar $calendar)
@@ -26,12 +27,12 @@ class UkTaxAllowanceCalculator
             CarbonInterval::week()
                 ->toPeriod($start, $end)
         )
-            ->map(fn(Carbon $date) => $date->endOfWeek())
-            ->reject(fn(Carbon $date) => $date->isAfter($end));
+            ->map(fn (Carbon $date) => $date->endOfWeek())
+            ->reject(fn (Carbon $date) => $date->isAfter($end));
 
         $sundaysHovered = CarbonInterval::day()
             ->toPeriod($start, $end, CarbonPeriod::EXCLUDE_END_DATE)
-            ->filter(fn(Carbon $carbon) => $carbon->isSunday());
+            ->filter(fn (Carbon $carbon) => $carbon->isSunday());
 
         if ($sundaysHovered->count() >= $insideDates->count()) {
             $insideDates->push($end->copy());
@@ -59,7 +60,7 @@ class UkTaxAllowanceCalculator
             CarbonInterval::day()
                 ->toPeriod($dateStart, $dateEnd)
                 ->filter(
-                    fn(Carbon $day) => $day->isSameDay($this->lastWorkingDayOfTheMonth($day))
+                    fn (Carbon $day) => $day->isSameDay($this->lastWorkingDayOfTheMonth($day))
                 )
         );
 

@@ -15,7 +15,7 @@ it('returns valid week end dates', function ($start, $end, $endDates) {
         ->startOfDay();
 
     $weeklyEndDates = collect($this->taxAllowanceCalculator->weeklyEndDatesBetween($start, $end))
-        ->map(fn(Carbon $carbon) => $carbon->toDateString())
+        ->map(fn (Carbon $carbon) => $carbon->toDateString())
         ->all();
 
     expect($weeklyEndDates)->toEqual($endDates);
@@ -88,7 +88,7 @@ it('returns valid month end dates', function ($start, $end, $endDates) {
     $end = Carbon::createFromFormat('Y-m-d', $end)
         ->startOfDay();
     $monthEndDates = $this->taxAllowanceCalculator->monthlyEndDatesBetween($start, $end)
-        ->map(fn(Carbon $carbon) => $carbon->toDateString())
+        ->map(fn (Carbon $carbon) => $carbon->toDateString())
         ->all();
 
     expect($monthEndDates)->toEqual($endDates);
