@@ -7,7 +7,7 @@
 
 This package is for determining a UK employee tax allowance for a specific date range. 
 
-You may get weekly or monthly number of allowance, as well as weekly or monthly period end dates for the provided date range.
+You may get the weekly or monthly tax allowance, as well as weekly or monthly period end dates for the provided date range.
 
 ## Installation
 
@@ -17,7 +17,7 @@ composer require worksome/uk-tax-allowance
 
 ## Usages
 
-### UkTaxAllowanceCalculator
+### `UkTaxAllowanceCalculator`
 
 ```php
 /**
@@ -30,23 +30,24 @@ composer require worksome/uk-tax-allowance
 #### Weekly allowance
 
 ```php
-// Get weekly allowance count for a specific date range 
+// Get the weekly allowance count for a specific date range 
 $weeklyAllowanceCount = $ukTaxAllowanceCalculator->weekly($dateStart, $dateEnd);
 
-// Get weekly allowance end dates for a specific date range 
+// Get the weekly allowance end dates for a specific date range 
 $weeklyAllowanceEndDates = $ukTaxAllowanceCalculator->weeklyEndDatesBetween($dateStart, $dateEnd);
 ```
 
 #### Monthly allowance
+
 ```php
-// Get monthly allowance end dates for a specific date range 
+// Get the monthly allowance end dates for a specific date range 
 $monthlyAllowanceEndDates = $ukTaxAllowanceCalculator->monthlyEndDatesBetween($dateStart, $dateEnd);
-// Get monthly allowance count for a specific date range 
+// Get the monthly allowance count for a specific date range 
 $monthlyAllowanceCount = $ukTaxAllowanceCalculator->monthly($dateStart, $dateEnd);
 ```
 
 ### Calendar
 
-You may use our YasumiUkCalendar which relies on the azuyalabs/yasumi package. For Laravel users, `UkTaxAllowanceServiceProvider` will register it by default.
+You may use our `YasumiUkCalendar` which relies on the [`azuyalabs/yasumi`](https://github.com/azuyalabs/yasumi) package. For Laravel users, `UkTaxAllowanceServiceProvider` will register it by default.
 
 Or create your own and have it implement `Worksome\UkTaxAllowance\Contracts\UkCalendar`
