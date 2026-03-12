@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "azuyalabs/yasumi": "^2.5"
+        "azuyalabs/yasumi": "^2.10"
     },
     "require-dev": {
         "larastan/larastan": "^3.1",

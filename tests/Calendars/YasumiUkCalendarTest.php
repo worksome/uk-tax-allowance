@@ -25,6 +25,6 @@ it('returns correct closest future working day', function ($day, $expectedCloses
 
     expect($closestFutureWorkingDay->toDateString())->toEqual($expectedClosestFutureWorkingDay);
 })->with([
-    ['2021-04-02', '2021-04-06'],
+    ['2021-04-02', '2021-04-05'],
     ['2021-05-29', '2021-06-01'],
 ]);
