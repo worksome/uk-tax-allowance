@@ -1,7 +1,9 @@
 # Worksome Uk Allowance library
 
-[![Tests](https://github.com/worksome/uk-tax-allowance/actions/workflows/main.yml/badge.svg)](https://github.com/worksome/uk-tax-allowance/actions/workflows/main.yml)
-[![Code Analysis](https://github.com/worksome/uk-tax-allowance/actions/workflows/code-analysis.yml/badge.svg)](https://github.com/worksome/uk-tax-allowance/actions/workflows/code-analysis.yml)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/worksome/uk-tax-allowance.svg?style=flat-square&label=Packagist)](https://packagist.org/packages/worksome/uk-tax-allowance)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/worksome/uk-tax-allowance/tests.yml?branch=main&style=flat-square&label=Tests)](https://github.com/worksome/uk-tax-allowance/actions?query=workflow%3ATests+branch%3Amain)
+[![GitHub Static Analysis Action Status](https://img.shields.io/github/actions/workflow/status/worksome/uk-tax-allowance/static.yml?branch=main&style=flat-square&label=Static%20Analysis)](https://github.com/worksome/uk-tax-allowance/actions?query=workflow%3A"Static%20Analysis"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/worksome/uk-tax-allowance.svg?style=flat-square&label=Downloads)](https://packagist.org/packages/worksome/uk-tax-allowance)
 
 This package is for determining a UK employee tax allowance for a specific date range. 
 
