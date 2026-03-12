@@ -47,12 +47,6 @@ class YasumiUkCalendar implements UkCalendar
         return $this->closestWorkingDay($date, self::PAST);
     }
 
-    /** {@inheritdoc} */
-    public function closestFuturWorkingDay(Carbon $date): Carbon
-    {
-        return $this->closestFutureWorkingDay($date);
-    }
-
     protected function closestWorkingDay(Carbon $date, int $direction): Carbon
     {
         $workingDay = $date->copy();

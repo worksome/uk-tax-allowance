@@ -30,10 +30,4 @@ interface UkCalendar
      * Returns the closest working day in the past in comparison to the provided date.
      */
     public function closestPastWorkingDay(Carbon $date): Carbon;
-
-    /**
-     * @deprecated 1.3.0 Use closestFutureWorkingDay() instead. This method will be removed in 2.0.0.
-     * @see closestFutureWorkingDay()
-     */
-    public function closestFuturWorkingDay(Carbon $date): Carbon;
 }
