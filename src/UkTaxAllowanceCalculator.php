@@ -14,7 +14,7 @@ class UkTaxAllowanceCalculator
 
     protected const PAST = -1;
 
-    public function __construct(private UkCalendar $calendar)
+    public function __construct(private readonly UkCalendar $calendar)
     {
     }
 
